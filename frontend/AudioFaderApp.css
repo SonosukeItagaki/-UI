@@ -1,0 +1,28 @@
+.audio-fader-app {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .fader-container {
+    margin: 20px 0;
+  }
+  
+  input[type="range"] {
+    width: 300px;
+    margin-left: 10px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
