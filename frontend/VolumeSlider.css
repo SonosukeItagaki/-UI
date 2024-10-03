@@ -1,0 +1,28 @@
+/* フェーダーとカウンターのコンテナ */
+.volume-slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* フェーダーとカウンターのグループ */
+  .slider-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* フェーダーのスタイル */
+  .slider {
+    width: 300px; /* フェーダーの横幅を拡大 */
+    height: 20px; /* フェーダーの高さ */
+    margin-right: 20px; /* フェーダーとカウンターの間のスペース */
+  }
+  
+  /* 音量カウンターのスタイル */
+  .volume-counter {
+    font-size: 18px;
+    width: 30px; /* カウンターの固定幅 */
+    text-align: right; /* カウンター内の数字を右揃え */
+  }
+  
