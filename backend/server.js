@@ -1,25 +1,16 @@
 const express = require('express');
-const fs = require('fs');
-const cors = require('cors'); // クロスオリジンを許可する
-
 const app = express();
-app.use(cors()); // フロントエンドと連携するためにCORSを許可
-app.use(express.json()); // JSONボディのパース
+const path = require('path');
 
-// POSTリクエストでデータを受け取り、保存する
-app.post('/save', (req, res) => {
-  const data = req.body;
-  fs.appendFile('experiment_data.json', JSON.stringify(data) + '\n', (err) => {
-    if (err) {
-      console.error('Error saving data:', err);
-      res.status(500).send('Error saving data');
-    } else {
-      res.status(200).send('Data saved successfully');
-    }
-  });
+// Reactのビルドファイルを提供する
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// すべてのリクエストに対してindex.htmlを返す
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
 });
 
-// サーバーをポート3000で起動
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
